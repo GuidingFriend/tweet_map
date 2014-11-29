@@ -12,7 +12,7 @@ from django.template import RequestContext
 from django.contrib.staticfiles.storage import staticfiles_storage
 
 def home(request):
-    tweets = TwitterServiceTwitterfeed2.objects.all().filter(x__isnull = False,y__isnull = False)[0:40000]
+    tweets = TwitterServiceTwitterfeed2.objects.all().filter(x__isnull = False,y__isnull = False)[0:20000]
     context = {'tweets' : tweets}
     return render_to_response("tweet-map.html", {'tweets' : tweets}, RequestContext(request))
 
