@@ -114,6 +114,8 @@ class TwitterServiceTwitterfeed2(models.Model):
     y = models.CharField(db_column='Y', max_length=255) # Field name made lowercase.
     text = models.CharField(db_column='Text', max_length=255) # Field name made lowercase.
     location = models.CharField(max_length=255)
+    sentiment = models.CharField(max_length=255)
+    sentiment_score = models.DecimalField(default=0, max_digits=8, decimal_places=6)
     class Meta:
         managed = True
         db_table = 'twitter_service_twitterfeed2'
