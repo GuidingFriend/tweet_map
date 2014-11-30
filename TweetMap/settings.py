@@ -125,3 +125,9 @@ else:
         INSTALLED_APPS  += LOCAL_INSTALLED_APPS
     except NameError:
         pass
+
+BROKER_URL = "sqs://%s:%s@" % (AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY)
+CELERY_TIMEZONE = 'America/New_York'
+CELERY_ACCEPT_CONTENT = ['pickle','json', 'msgpack', 'yaml']
+from celery.schedules import crontab
+from datetime import timedelta
